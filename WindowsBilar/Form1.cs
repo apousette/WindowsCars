@@ -47,10 +47,10 @@ namespace WindowsBilar
             //Sorts the cars alphabetically for startup of program.
             var carssorted = Cars.OrderBy(x => x.Make);
             foreach (var item in carssorted)
-            {
-                listBox.Items.Add($"{item.Make} {item.Model} {item.Year}")
-            }
-            
+                {
+                    listBox.Items.Add($"{item.Make} {item.Model} {item.Year}");
+                }
+
             //Function for "Red Cars" that count and print out the number of red cars.
             redcars.Click += new EventHandler((sender, e) =>
                 {

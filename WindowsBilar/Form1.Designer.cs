@@ -29,7 +29,6 @@ namespace WindowsBilar
         /// </summary>
         private void InitializeComponent()
         {
-            this.allcars = new System.Windows.Forms.Button();
             this.redcars = new System.Windows.Forms.Button();
             this.oldercars = new System.Windows.Forms.Button();
             this.greyvolvo = new System.Windows.Forms.Button();
@@ -37,15 +36,6 @@ namespace WindowsBilar
             this.mostexpensive = new System.Windows.Forms.Button();
             this.listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // allcars
-            // 
-            this.allcars.Location = new System.Drawing.Point(250, 11);
-            this.allcars.Name = "allcars";
-            this.allcars.Size = new System.Drawing.Size(238, 74);
-            this.allcars.TabIndex = 0;
-            this.allcars.Text = "button1";
-            this.allcars.UseVisualStyleBackColor = true;
             // 
             // redcars
             // 
@@ -111,7 +101,6 @@ namespace WindowsBilar
             this.Controls.Add(this.greyvolvo);
             this.Controls.Add(this.oldercars);
             this.Controls.Add(this.redcars);
-            this.Controls.Add(this.allcars);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -119,8 +108,6 @@ namespace WindowsBilar
         }
 
         #endregion
-
-        private System.Windows.Forms.Button allcars;
         private System.Windows.Forms.Button redcars;
         private System.Windows.Forms.Button oldercars;
         private System.Windows.Forms.Button greyvolvo;
