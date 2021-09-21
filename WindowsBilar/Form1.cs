@@ -45,20 +45,22 @@ namespace WindowsBilar
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
 
             //Sorts the cars alphabetically for startup of program.
+            listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
             var carssorted = Cars.OrderBy(x => x.Make);
             foreach (var item in carssorted)
                 {
                     listBox.Items.Add($"{item.Make} {item.Model} {item.Year}");
                 }
+            listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
+
 
             //Function for "Red Cars" that count and print out the number of red cars.
             redcars.Click += new EventHandler((sender, e) =>
                 {
                     int redAmount = Cars.Count(x => x.Color == "Red");
 
-                    listBox.Items.Add("#################################");
                     listBox.Items.Add($"We currently have {redAmount} red cars on hand.");
-                    listBox.Items.Add("#################################");
+                    listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
                 }
                 );
 
@@ -67,27 +69,37 @@ namespace WindowsBilar
                 {
                     int olderAmount = Cars.Count(x => x.Year < 2003);
 
-                    listBox.Items.Add("#################################");
-                    listBox.Items.Add($"We currently have {olderAmount} cars from before 2003.");
-                    listBox.Items.Add("#################################");
+                    listBox.Items.Add($"We currently have {olderAmount} cars from before 2003 on hand.");
+                    listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
                 }
                 );
             
+            //Finds all "Volvo" cars, then from that finds all Volvos with "Grey" color.
             greyvolvo.Click += new EventHandler((sender, e) =>
                 {
+                    int greyV = Cars.FindAll(x => x.Make == "Volvo").Count(y => y.Color == "Grey");
 
+                    listBox.Items.Add($"We currently have {greyV} grey Volvos on hand.");
+                    listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
                 }
                 ); 
 
+            //Takes all cars with "BMW" in them and takes the average of their corresponding "Km".
             bmwrange.Click += new EventHandler((sender, e) =>
                 {
+                    double bmwAverage = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);
 
+                    listBox.Items.Add($"Our BMWs have, on average, been driven {bmwAverage} Km.");
+                    listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
                 }
                 );
 
             mostexpensive.Click += new EventHandler((sender, e) =>
                 {
+                    Cars = Cars.OrderByDescending(x => x.Price).ToList();
 
+                    listBox.Items.Add($"Currently our most expensive car we have on hand is the {Cars[0].Color} {Cars[0].Make} {Cars[0].Model} {Cars[0].Year} at {Cars[0].Price} monetary units.");
+                    listBox.Items.Add("#################################"); //Gives a nice aesthetic break.
                 }
                 );
 
